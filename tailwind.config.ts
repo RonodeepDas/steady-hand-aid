@@ -22,10 +22,18 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          hover: "hsl(var(--secondary-hover))",
+        },
+        // Medical Status Colors
+        status: {
+          normal: "hsl(var(--status-normal))",
+          mild: "hsl(var(--status-mild))",
+          severe: "hsl(var(--status-severe))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -62,6 +70,29 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontSize: {
+        'medical-xl': 'var(--font-size-medical-xl)',
+        'medical-lg': 'var(--font-size-medical-lg)',
+        'medical-md': 'var(--font-size-medical-md)',
+        'medical-sm': 'var(--font-size-medical-sm)',
+      },
+      boxShadow: {
+        'medical': 'var(--shadow-medical)',
+        'card': 'var(--shadow-card)',
+        'elevated': 'var(--shadow-elevated)',
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-status-normal': 'var(--gradient-status-normal)',
+        'gradient-status-mild': 'var(--gradient-status-mild)',
+        'gradient-status-severe': 'var(--gradient-status-severe)',
+      },
+      minHeight: {
+        'touch': '48px', // Accessibility minimum touch target
+      },
+      minWidth: {
+        'touch': '48px',
       },
       keyframes: {
         "accordion-down": {
