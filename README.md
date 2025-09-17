@@ -1,28 +1,20 @@
-# Welcome to your Lovable project
+Steady Hand
+Project Info
 
-## Project info
+This repository contains the source code for Steady Hand, an application designed to assist users with tremor-related challenges by providing a stable and responsive interface.
 
-**URL**: https://lovable.dev/projects/4007d974-ac36-49fa-8e9f-3b1c301e80c4
+How Can I Edit This Code?
 
-## How can I edit this code?
+There are several ways to work with this project:
 
-There are several ways of editing your application.
+1. Use Your Preferred IDE
 
-**Use Lovable**
+If you want to work locally using your own IDE, you can clone this repository and push changes.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4007d974-ac36-49fa-8e9f-3b1c301e80c4) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The only requirement is having Node.js & npm installed – install with nvm
+.
 
 Follow these steps:
-
-```sh
 # Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
 
@@ -30,44 +22,58 @@ git clone <YOUR_GIT_URL>
 cd <YOUR_PROJECT_NAME>
 
 # Step 3: Install the necessary dependencies.
-npm i
+npm install
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-```
+2. Edit a File Directly in GitHub
 
-**Edit a file directly in GitHub**
+Navigate to the desired file(s).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Click the Edit button (pencil icon) at the top right of the file view.
 
-**Use GitHub Codespaces**
+Make your changes and commit them directly.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+3. Use GitHub Codespaces
 
-## What technologies are used for this project?
+Navigate to the main page of your repository.
+
+Click on the Code button (green button) near the top right.
+
+Select the Codespaces tab.
+
+Click on New codespace to launch a new Codespace environment.
+
+Edit files directly within the Codespace, then commit and push your changes.
+
+Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Vite
 
-## How can I deploy this project?
+TypeScript
 
-Simply open [Lovable](https://lovable.dev/projects/4007d974-ac36-49fa-8e9f-3b1c301e80c4) and click on Share -> Publish.
+React
 
-## Can I connect a custom domain to my Lovable project?
+shadcn-ui
 
-Yes, you can!
+Tailwind CSS
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+You can deploy this project to platforms like Vercel, Netlify, or any other static hosting provider that supports modern front-end frameworks.
+
+For example, with Vercel:
+
+Push your project to GitHub.
+
+Import the repository into Vercel.
+
+Configure build settings if necessary (npm run build).
+
+Deploy and get a live link instantly.
+
+Custom Domain
+
+If you are hosting on Vercel, Netlify, or a similar platform, you can connect your own custom domain via their respective dashboard settings.
