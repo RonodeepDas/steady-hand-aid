@@ -10,9 +10,9 @@ export default defineConfig(({ mode }) => {
   return {
     base: "/steady-hand-aid/",  // 👈 GitHub Pages repo name
     server: {
-      host: "::",        // allow network access
-      port: 8080,        // dev server port
-      strictPort: true,  // fail if port is busy
+      host: "::",
+      port: 8080,
+      strictPort: true,
     },
     plugins: [
       react(),
@@ -20,16 +20,16 @@ export default defineConfig(({ mode }) => {
     ].filter(Boolean),
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "src"), // shorthand for src
+        "@": path.resolve(__dirname, "src"),
       },
     },
     build: {
-      outDir: "dist",       // production build folder
-      emptyOutDir: true,    // clean previous build
-      sourcemap: false,     // optional
+      outDir: "dist",      // production build folder
+      emptyOutDir: true,   // clean previous build
+      sourcemap: false,    // optional
     },
     optimizeDeps: {
-      include: ["react", "react-dom"], // speed up dev
+      include: ["react", "react-dom"],
     },
   };
 });
