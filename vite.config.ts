@@ -1,35 +1,35 @@
-name: Deploy Vite Site to GitHub Pages
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import { componentTagger } from "lovable-tagger";
 
-on:
-  push:
-    branches:
-      - main  # deploy on push to main branch
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
+  const isDev = mode === "development";
 
-permissions:
-  contents: write  # allow pushing to gh-pages
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Vite project
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4  # ✅ fixed version
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist      # matches vite.config.ts
-          publish_branch: gh-pages
+  return {
+    base: "/steady-hand-aid/", // GitHub Pages repo name
+    server: {
+      host: "::",
+      port: 8080,
+      strictPort: true,
+    },
+    plugins: [
+      react(),
+      isDev ? componentTagger() : undefined, // only in dev mode
+    ].filter(Boolean),
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, "src"),
+      },
+    },
+    build: {
+      outDir: "dist", // production folder
+      emptyOutDir: true,
+      sourcemap: false,
+    },
+    optimizeDeps: {
+      include: ["react", "react-dom"],
+    },
+  };
+});
