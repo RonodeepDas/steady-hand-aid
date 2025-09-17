@@ -8,39 +8,28 @@ export default defineConfig(({ mode }) => {
   const isDev = mode === "development";
 
   return {
-    // Base URL for GitHub Pages (repo name)
-    base: "/steady-hand-aid/",
-    
-    // Dev server configuration
+    base: "/steady-hand-aid/",  // 👈 GitHub Pages repo name
     server: {
-      host: "::",        // listen on all network interfaces
+      host: "::",        // allow network access
       port: 8080,        // dev server port
       strictPort: true,  // fail if port is busy
     },
-
-    // Plugins
     plugins: [
-      react(),               // React SWC plugin
-      isDev && componentTagger()  // Only use in development
+      react(),
+      isDev ? componentTagger() : undefined  // only in dev mode
     ].filter(Boolean),
-
-    // Path aliasing
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"), // shorthand for src
       },
     },
-
-    // Build configuration
     build: {
-      outDir: "dist",       // output folder
-      sourcemap: isDev,     // generate sourcemaps in dev
-      emptyOutDir: true,    // clear previous build
+      outDir: "dist",       // production build folder
+      emptyOutDir: true,    // clean previous build
+      sourcemap: false,     // optional
     },
-
-    // Optional: optimize dependencies
     optimizeDeps: {
-      include: ["react", "react-dom"],
+      include: ["react", "react-dom"], // speed up dev
     },
   };
 });
