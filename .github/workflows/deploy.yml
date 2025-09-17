@@ -3,7 +3,10 @@ name: Deploy Vite Site to GitHub Pages
 on:
   push:
     branches:
-      - main  # deploy on push to main
+      - main  # Trigger deployment on push to main branch
+
+permissions:
+  contents: write  # Grant write access to repository contents
 
 jobs:
   build-and-deploy:
@@ -25,8 +28,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v7
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist      # matches vite.config.ts
-          publish_branch: gh-pages
+          publish_dir: ./dist  # Directory to publish
+          publish_branch: gh-pages  # Branch to deploy to
