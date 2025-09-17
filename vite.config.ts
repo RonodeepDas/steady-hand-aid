@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/steady-hand-aid/",   // 👈 IMPORTANT: repo name here
   server: {
     host: "::",
     port: 8080,
