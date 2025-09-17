@@ -1,19 +1,17 @@
-name: Deploy Vite app to GitHub Pages
+name: Deploy Vite React app to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-
-permissions:
-  contents: write   # 👈 gives Actions permission to push
+    branches: [ main ]   # or master if your default branch is master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
